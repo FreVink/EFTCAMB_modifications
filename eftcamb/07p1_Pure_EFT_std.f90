@@ -150,6 +150,8 @@ contains
             case(4)
                 allocate( exponential_parametrization_1D::self%PureEFTOmega )
                 call self%PureEFTOmega%set_param_names( ['EFTOmega0  ', 'EFTOmegaExp'], ['\Omega_0^{\rm EFT}', 'n^{\rm EFT}       '] )
+            case(5)
+                allocate( linear_parametrization_1D::self%PureEFTOmega )
             case default
                 write(*,'(a,I3)') 'No model corresponding to PureEFTmodelOmega =', self%PureEFTmodelOmega
                 write(*,'(a)')    'Please select an appropriate model.'
