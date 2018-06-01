@@ -4,8 +4,7 @@
 FISHER=
 
 #Will detect ifort/gfortran or edit for your compiler
-ifortErr = 1
-#$(shell which ifort >/dev/null; echo $$?)
+ifortErr = $(shell which ifort >/dev/null; echo $$?)
 ifeq "$(ifortErr)" "0"
 
 #Intel compiler
