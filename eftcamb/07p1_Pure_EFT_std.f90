@@ -42,6 +42,7 @@ module EFTCAMB_pure_EFT_std
     use EFTCAMB_turning_point_parametrizations_1D
     use EFTCAMB_taylor_parametrizations_1D
     use EFTCAMB_abstract_model_designer
+    use EFTCAMB_FV_muSigma_caseii
 
     implicit none
 
@@ -151,7 +152,7 @@ contains
                 allocate( exponential_parametrization_1D::self%PureEFTOmega )
                 call self%PureEFTOmega%set_param_names( ['EFTOmega0  ', 'EFTOmegaExp'], ['\Omega_0^{\rm EFT}', 'n^{\rm EFT}       '] )
             case(5)
-                allocate( linear_parametrization_1D::self%PureEFTOmega )
+                allocate( FV_muSigma_caseii::self%PureEFTOmega )
             case default
                 write(*,'(a,I3)') 'No model corresponding to PureEFTmodelOmega =', self%PureEFTmodelOmega
                 write(*,'(a)')    'Please select an appropriate model.'
